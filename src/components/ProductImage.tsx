@@ -13,10 +13,10 @@ export const ProductImage = ({img, className, style}:Props)=> {
     let imgToShow:string;
     if(img){
         imgToShow = img;
-    }else if(product.img){
+    }else if(product && product.img){
         imgToShow = product.img;
     }else{
-        imgToShow = noImage;
+        imgToShow = noImage || '';
     }
     return (
         <img src={ imgToShow } alt='Product' className={`${styles.productImg} ${className}`} style={style}/>
